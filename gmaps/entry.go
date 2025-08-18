@@ -421,6 +421,7 @@ func EntryFromJSON(raw []byte, reviewCountOnly ...bool) (entry Entry, err error)
 	reviewsI := getNthElementAndCast[[]any](darray, 175, 9, 0, 0)
 	entry.UserReviews = make([]Review, 0, len(reviewsI))
 
+	entry.UserReviews = parseReviews(reviewsI)
 	return entry, nil
 }
 
