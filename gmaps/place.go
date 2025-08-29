@@ -225,11 +225,10 @@ function parse() {
 		return null;
 	}
 
-	for (let i = 65; i <= 90; i++) {
-		const key = String.fromCharCode(i) + "f";
-		if (appState[key] && appState[key][6]) {
+	const keys = Object.keys(appState);
+	const key = keys[0];
+	if (appState[key] && appState[key][6]) {
 		return appState[key][6];
-		}
 	}
 
 	return null;
