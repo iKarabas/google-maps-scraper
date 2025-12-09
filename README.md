@@ -11,22 +11,15 @@
 
 Join our Discord server to get help, share ideas, and connect with other users of the Google Maps Scraper!
 
-## 🚀 Take Your Lead Generation to the Next Level
+## 🎯 What Problem Are You Solving?
 
-**Tired of manual data collection? Meet LeadsDB - an API service that integrates with this scraper.**
+I'd love to understand how you're using this tool! 
+Please comment on [this discussion](https://github.com/gosom/google-maps-scraper/discussions/184) with your use case:
 
-[LeadsDB](https://gm.thexos.dev/) enhances your lead generation with:
-- ✅ Cloud storage for all your search results
-- ✅ Visualization dashboard
-- ✅ Advanced filtering & export options
-- ✅ Simple API integration with this scraper
-- ✅ Expose your data to other services via a REST API
-
-Plans start at just €4.99/month
-
-**[Join the waitlist →](https://gm.thexos.dev/)**
-
-_Continue using this free scraper and supercharge your workflow with LeadsDB._
+- 🎯 **Lead Generation** - Finding potential customers
+- 📊 **Market Research** - Understanding competitors/markets
+- 📁 **Database Building** - Creating/maintaining business lists
+- 💡 **Other** - Tell me more!
 
 ## Sponsors
 
@@ -69,6 +62,7 @@ A no-code Google Maps scraper that pulls business leads from Google Maps in one 
 
 - 📇 **Includes** emails, social profiles, phone numbers, addresses, reviews, images and more.
 - 📥 **Export** to CSV · Excel · JSON  
+- 🔌 **API** Support: Extract data via [API](https://gmapsextractor.com/google-maps-api?utm_source=github&utm_medium=banner&utm_campaign=gosom)
 - 🎁 **Free**: Get your first **1,000 leads** today  
 [Get Started for Free](https://gmapsextractor.com?utm_source=github&utm_medium=banner&utm_campaign=gosom)
 
@@ -97,7 +91,29 @@ A no-code Google Maps scraper that pulls business leads from Google Maps in one 
 
 ![Scrapeless](./img/scrapeless_light.png#gh-light-mode-only)
 
+<hr>
 
+[Decodo's proxies](https://visit.decodo.com/APVbbx) with #1 response time in the market
+
+Collect data without facing CAPTCHAs, IP bans, or geo-restrictions
+- ● 125M+ IP pool
+- ● 195+ locations worldwide  
+- ● 24/7 tech support
+- ● Extensive documentation
+
+**[Start your 3-day free trial with 100MB →](https://visit.decodo.com/APVbbx)**
+
+![Decodo](./img/decodo.png)
+
+<hr>
+
+
+[Thordata proxies](https://www.thordata.com/?ls=github&lk=google-maps)
+
+- Precision Targeting, Global Coverage. Starting at $1.80 - Reliable Data Collection, Every Time.
+- Contact Thordata to start your 3-day free trial starting at 100MB
+
+[![Thordata Banner](./img/thordata-banner.png)](https://www.thordata.com/?ls=github&lk=google-maps)
 
 <hr>
 
@@ -341,7 +357,7 @@ output instead of CSV.
 
 (tested only on Ubuntu 22.04)
 
-**make sure you use go version 1.24.3**
+**make sure you use go version 1.25.3**
 
 
 ```
@@ -357,6 +373,52 @@ Be a little bit patient. In the first run it downloads required libraries.
 The results are written when they arrive in the `results` file you specified
 
 **If you want emails use additionally the `-email` parameter**
+
+### Using a Proxy
+
+#### UI
+From the UI set the url, username and password
+
+#### Command line
+
+Use the `-proxies` option like:
+
+```
+./google-maps-scraper -input example-queries.txt -results random.txt -proxies '<proxy1>,<proxy2>' -depth 1 -c 2
+```
+
+where `<proxy1>,...<proxyN>` is a valid proxy url like:
+
+```
+'scheme://username:password@host:port
+```
+
+if your proxy does not require authentication:
+
+```
+scheme://host:port
+```
+
+Supported schemes:
+
+- socks5
+- socks5h
+- http
+- https
+
+I encourange you to buy a proxy service from one of our sponsors.
+They are reliable and help me to maintain the project.
+
+#### Example with Decodo Proxies
+
+[Decodo](https://visit.decodo.com/APVbbx) offers high-performance proxies with #1 response time in the market:
+
+```bash
+./google-maps-scraper -input example-queries.txt -results restaurants.csv -proxies 'http://username:password@proxy.decodo.com:8080' -depth 1 -c 2
+```
+
+**[Get your Decodo proxy credentials →](https://visit.decodo.com/APVbbx)** | **[View detailed Decodo integration guide →](decodo.md)**
+
 
 ### Command line options
 
@@ -577,6 +639,29 @@ Thank you for considering support for the project. Every bit of assistance helps
 
 ### Special Thanks to:
 
+[Thordata proxies](https://www.thordata.com/?ls=github&lk=google-maps)
+
+- Precision Targeting, Global Coverage. Starting at $1.80 - Reliable Data Collection, Every Time.
+- Contact Thordata to start your 3-day free trial starting at 100MB
+
+[![Thordata Banner](./img/thordata-banner.png)](https://www.thordata.com/?ls=github&lk=google-maps)
+
+<br>
+
+[Decodo's proxies](https://visit.decodo.com/APVbbx) with #1 response time in the market
+
+Collect data without facing CAPTCHAs, IP bans, or geo-restrictions
+- ● 125M+ IP pool
+- ● 195+ locations worldwide  
+- ● 24/7 tech support
+- ● Extensive documentation
+
+**[Start your 3-day free trial with 100MB →](https://visit.decodo.com/APVbbx)**
+
+![Decodo](./img/decodo.png)
+
+<br>
+
 [Scrapeless](https://www.scrapeless.com/): One-click to scrape Google search results, supporting 15+ SERP scenarios such as Google Maps/Scholars/Jobs, $0.1/thousand queries, 0.2s response.
 
 **[👉 Free Trial](https://app.scrapeless.com/passport/login?utm_source=gosom&utm_campaign=google-maps)**
@@ -623,7 +708,8 @@ Thank you for considering support for the project. Every bit of assistance helps
 A no-code Google Maps scraper that pulls business leads from Google Maps in one click.
 
 - 📇 **Includes** emails, social profiles, phone numbers, addresses, reviews, images and more.
-- 📥 **Export** to CSV · Excel · JSON  
+- 📥 **Export** to CSV · Excel · JSON
+- 🔌 **API** Support: Extract data via [API](https://gmapsextractor.com/google-maps-api?utm_source=github&utm_medium=banner&utm_campaign=gosom)
 - 🎁 **Free**: Get your first **1,000 leads** today  
 <a href="https://gmapsextractor.com?utm_source=github&utm_medium=banner&utm_campaign=gosom">Get Started for Free</a>
 </td>
@@ -665,3 +751,4 @@ Please use this scraper responsibly and in accordance with all applicable laws a
 
 banner is generated using OpenAI's DALL-E
 > **Note:** If you register via the links on my page, I may get a commission. This is another way to support my work
+

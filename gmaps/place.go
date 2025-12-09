@@ -118,11 +118,7 @@ func (j *PlaceJob) BrowserActions(ctx context.Context, page playwright.Page) scr
 		return resp
 	}
 
-	if err = clickRejectCookiesIfRequired(page); err != nil {
-		resp.Error = err
-
-		return resp
-	}
+	clickRejectCookiesIfRequired(page)
 
 	const defaultTimeout = 5000
 
@@ -224,13 +220,11 @@ function parse() {
 	if (!appState) {
 		return null;
 	}
-
 	const keys = Object.keys(appState);
 	const key = keys[0];
 	if (appState[key] && appState[key][6]) {
 		return appState[key][6];
 	}
-
 	return null;
 }
 `
