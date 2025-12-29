@@ -445,7 +445,6 @@ func EntryFromJSON(raw []byte, reviewCountOnly ...bool) (entry Entry, err error)
 		}
 	}
 
-	entry.UserReviews = parseReviews(reviewsI)
 	return entry, nil
 }
 
